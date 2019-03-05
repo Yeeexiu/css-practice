@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>切割&过渡动画&animation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .contain{
+            display: -webkit-flex;
+            text-align: center;
+            justify-content: space-around
+        }
+        .contain >div{
+            flex-direction: column;
+        }
+        .imgBox{
+            width: 500px;
+            height: auto;
+            overflow: hidden;
+        }
+        .imgBox img {
+            width: 500px;
+            height: auto;
+            clip-path: circle(40% at 65% 50%);
+            transform: scale(1.05,1.05);
+            transition: transform .2s linear,clip-path .2s linear;
+        }
+
+        .imgBox:hover img{
+            clip-path: circle(100% at 50% 50%);
+            transform: scale(1,1);
+        }
+        .animation{
+            margin: 0;
+            padding: 0;
+            width: 500px;
+            height: 268.375px;
+            border: 0;  
+        }
+        .animation img {
+            width: 500px;
+            height: auto;
+            animation: anim 2s linear infinite alternate;
+            -webkit-animation: anim 2s linear infinite alternate;
+        }
+        @keyframes anim{
+            from{
+                clip-path:circle(20% at 50% 50%)
+            }
+            to{
+                clip-path:circle(50% at 50% 50%)
+            }
+        }
+        @-webkit-keyframes anim{
+            from{
+                clip-path:circle(20% at 50% 50%)
+            }
+            to{
+                clip-path:circle(50% at 50% 50%)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <div class="imgBox">
+            <img src="1.jpg" alt="图片">
+            <p>hover效果</p>
+        </div>
+    
+        <div class="animation">
+            <img src="1.jpg" alt="图片">
+            <p>自动效果</p>
+        </div>
+    </div>
+</body>
+</html>
