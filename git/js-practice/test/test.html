@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="1.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 顶部按钮 -->
+    <div class="version-box">
+        <div class="version click" onclick="getInfo(0)">
+            <p>高级版</p>
+            <p>适合独立摄影师</p>
+        </div>
+        <div class="version" onclick="getInfo(1)">
+            <p>定制版</p>
+            <p>适合小型工作室</p>
+        </div>
+    </div>
+
+    <!-- 分割线 -->
+    <div class="dividing"></div>
+    
+    <!-- 功能介绍 -->
+    <div class="content">
+        <!-- 版本名称 -->
+        <div class="content-title">
+            <p>高级版</p>
+            <p>（适合<span id="fit">独立摄影师</span>）</p>
+        </div>
+
+        <!-- 描述信息 -->
+        <div class="function" id="function">
+        </div>
+    </div>
+    <div class="cover" id='cover'>
+        <div class="cover-cont">
+            <p><span id="v-name"></span>-<span id="v-item"></span></p>
+            <p id="v-item-intro"></p>
+        </div>
+        <div class="close" id="" onclick="hiddenMask()">
+            <span>✕</span>
+        </div>
+    </div>
+
+    <div class="dividing"></div>
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="1.js"></script>
+</body>
+</html>
